@@ -56,7 +56,7 @@ function renderDesc (breed) {
 }
 
 function onChangeSelect(evt) {
-  elements.loader.classList.remove('unvisible');
+  elements.loader.classList.add('unvisible');
   elements.catPic.innerHTML = '';
   elements.catDesc.innerHTML = '';
   const breedId = evt.target.value;
