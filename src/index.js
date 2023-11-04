@@ -30,7 +30,7 @@ function renderSelect (breeds) {
   });
 };
 
-function fetchBreedsRender () {
+(function fetchBreedsRender () {
   elements.loader.classList.remove('unvisible');
   fetchBreeds()
   .then(breeds => renderSelect (breeds))
@@ -44,7 +44,7 @@ function fetchBreedsRender () {
     elements.loader.classList.add('unvisible');
     elements.select.classList.remove('unvisible');
   })
-};
+})();
 
 function renderDesc (breed) {
   const picture = `<img class='cat-picture' src ='${breed.url}' alt = '${breed.id}'>`;
