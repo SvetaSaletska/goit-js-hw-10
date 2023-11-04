@@ -24,7 +24,7 @@ function renderSelect (breeds) {
      return `<option value = '${breed.reference_image_id}'>${breed.name}</option>`
   })
   .join('');
-  elements.select.insertAdjacentElement('beforeend', markup);
+  elements.select.insertAdjacentHTML('beforeend', markup);
   new SlimSelect({
     select: '#single',
   });
@@ -35,6 +35,7 @@ function fetchBreedsRender () {
   fetchBreeds()
   .then(breeds => renderSelect (breeds))
   .catch (error => {
+    console.log(error);
     Notify.failure(
     'Ooops! Something went wrong! Try reloading the page!'
     );
@@ -46,12 +47,12 @@ function fetchBreedsRender () {
 };
 
 function renderDesc (breed) {
-  const picture = `<img class='cat-picture' src = '${breed.url}' alt = '${breed.id}'>`;
-  const descript = `<h2 class= "cat-info-desc-title">${breed.breeds[0].name}</h2>,
+  const picture = `<img class='cat-picture' src ='${breed.url}' alt = '${breed.id}'>`;
+  const descript = `<h2 class='cat-info-desc-title'>${breed.breeds[0].name}</h2>
   <p class="cat-info-desc-desc">${breed.breeds[0].description}</p>
   <p class="cat-info-desc-temp"><b>Temperament:</b>${breed.breeds[0].temperament}</p>`;
-  elements.catPic.insertAdjacentElement('beforeend', picture);
-  elements.catDesc.insertAdjacentElement('beforeend', descript);
+  elements.catPic.insertAdjacentHTML('beforeend', picture);
+  elements.catDesc.insertAdjacentHTML('beforeend', descript);
 }
 
 function onChangeSelect(evt) {
