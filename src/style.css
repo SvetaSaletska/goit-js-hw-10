@@ -1,10 +1,27 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .cat-info-pict {
   display: flex;
 }
+
+.cat-picture {
+  width: 300px;
+  height: auto;
+}
+
+.cat-info-desc {
+  margin-left: 10px;
+}
+
+.breed-select {
+  margin-bottom: 10px;
+}
+
+.loader,
+.error {
+display: none;
+}
+
+
