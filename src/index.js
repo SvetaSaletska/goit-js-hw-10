@@ -15,6 +15,9 @@ const elements = {
   catPic: document.querySelector('.cat-info-pict'),
   catDesc: document.querySelector('.cat-info-desc')
 }
+//  elements.loader.style.display = 'none';
+//  elements.catInfo.style.display = 'none';
+// elements.error.style.display = 'none';
 
 elements.select.addEventListener('change', onChangeSelect);
 
@@ -42,7 +45,7 @@ function renderSelect (breeds) {
   })
   .finally(() => {
     elements.loader.classList.add('unvisible');
-    elements.select.classList.remove('unvisible');
+    elements.loader.classList.remove('unvisible');
   })
 })();
 
@@ -57,6 +60,7 @@ function renderDesc (breed) {
 
 function onChangeSelect(evt) {
   elements.loader.classList.add('unvisible');
+  elements.loader.classList.remove('unvisible');
   elements.catPic.innerHTML = '';
   elements.catDesc.innerHTML = '';
   const breedId = evt.target.value;
@@ -71,4 +75,5 @@ function onChangeSelect(evt) {
   })
   .finally(() => elements.loader.classList.add ('unvisible'));
 }
+
 
