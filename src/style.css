@@ -7,7 +7,7 @@
 }
 
 .cat-picture {
-  width: 300px;
+  width: 350px;
   height: auto;
 }
 
@@ -19,22 +19,21 @@
   margin-bottom: 10px;
 }
 
-/* .loader,
-.error {
-display: none;
-} */
+.loader {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
 
 .is-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  margin: -1px;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }
 

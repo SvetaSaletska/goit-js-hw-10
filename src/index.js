@@ -15,9 +15,6 @@ const elements = {
   catPic: document.querySelector('.cat-info-pict'),
   catDesc: document.querySelector('.cat-info-desc')
 }
-//  elements.loader.style.display = 'none';
-//  elements.catInfo.style.display = 'none';
-// elements.error.style.display = 'none';
 
 elements.select.addEventListener('change', onChangeSelect);
 
