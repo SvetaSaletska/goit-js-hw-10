@@ -34,7 +34,7 @@ function renderSelect (breeds) {
 };
 
 (function fetchBreedsRender () {
-  elements.loader.classList.remove('unvisible');
+  elements.select.classList.remove('is-hidden');
   fetchBreeds()
   .then(breeds => renderSelect (breeds))
   .catch (error => {
@@ -44,8 +44,7 @@ function renderSelect (breeds) {
     );
   })
   .finally(() => {
-    elements.loader.classList.add('unvisible');
-    elements.loader.classList.remove('unvisible');
+    elements.loader.classList.add('is-hidden');
   })
 })();
 
@@ -59,8 +58,7 @@ function renderDesc (breed) {
 }
 
 function onChangeSelect(evt) {
-  elements.loader.classList.add('unvisible');
-  elements.loader.classList.remove('unvisible');
+  elements.loader.classList.remove('is-hidden');
   elements.catPic.innerHTML = '';
   elements.catDesc.innerHTML = '';
   const breedId = evt.target.value;
@@ -73,7 +71,7 @@ function onChangeSelect(evt) {
       'Oops! Something went wrong! Try reloading the page!'
     );
   })
-  .finally(() => elements.loader.classList.add ('unvisible'));
+  .finally(() => elements.loader.classList.add ('is-hidden'));
 }
 
 
